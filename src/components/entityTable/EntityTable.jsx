@@ -8,7 +8,7 @@ function EntityTable({header, type, events}) {
     }
     return (
         <div className="bg-white shadow-lg overflow-hidden w-full my-4">
-            <div className="px-4 py-5 sm:px-6">
+            <div className="px-4 py-5 sm:px-20">
                 <h3 className={`text-3xl leading-6 font-bold text-${colorMap[type]}`}>
                 {header}
                 </h3>

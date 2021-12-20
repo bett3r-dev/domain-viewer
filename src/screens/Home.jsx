@@ -32,13 +32,14 @@ export default function Home(props) {
   },[domain])
   
   //TODO: cambiar el sidebar para los schemas
+  //TODO: los schemas que vienen sin nombre de propiedad, solo type
 
     return (
-        <div className='grid grid-cols-10 min-h-screen min-w-screen my-4'>
-            <div className="col-span-2 border-r border-grey-50 h-full w-full">
+        <div className='relative md:fixed grid grid-cols-10 min-h-screen w-full my-4 inset-0'>
+            <div className="col-span-2 border-r border-grey-50 h-screen w-full relative overflow-y-auto overflow-x-auto">
               {domain && <Sidebar domain={domain}/>}
             </div>
-            <div className='sm:text-center lg:text-left col-span-8 w-full'>
+            <div className='sm:text-center lg:text-left col-span-8 w-full h-screen overflow-y-auto'>
               {displayed?.commands &&
                 Object.keys(displayed.commands).map((entityKey, key) =>
                 <EntityTable key={key} type={'command'} header={entityKey} events={displayed.commands[entityKey]} />
@@ -53,7 +54,9 @@ export default function Home(props) {
               )}
               {displayed?.schemas && 
               Object.keys(displayed.schemas).map((schemaKey, key)=>
+              <div className="px-4 py-5 sm:px-20">
               <SchemaTable key={key} header={schemaKey} headerDescription={"La descripcion"} properties={displayed.schemas[schemaKey]?.keys}></SchemaTable>
+              </div>
               )}
             </div>
         </div>

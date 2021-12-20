@@ -34,7 +34,7 @@ function useProvideDisplayedContent() {
   const setFullDomain = (data) =>{
     const parsedDomain = parseDomain(data)
     setDomain({...parsedDomain})
-    // setDisplayed({...parsedDomain})
+    console.log('domain',parsedDomain)
   }
 
   const displayEvent = (eventName) =>{ 

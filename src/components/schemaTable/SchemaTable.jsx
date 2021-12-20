@@ -1,8 +1,9 @@
 import SchemaProperty from "./SchemaProperty";
 
 function SchemaTable({header, headerDescription, properties}) {
+    console.log('que hay aca', properties)
     return (
-        <div className="bg-gray-100 shadow-lg overflow-hidden w-5/6 mx-auto mt-4 mb-8">
+        <div className="bg-gray-100 shadow-lg overflow-hidden w-full mx-auto mt-4 mb-8 ">
             <div className="px-4 py-5 sm:px-6">
                 <h3 className="text-lg leading-6 font-medium text-gray-900">
                 {header}
